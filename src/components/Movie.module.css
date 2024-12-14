@@ -1,13 +1,14 @@
 .container {
     border-radius: 1em;
-    padding: 2rem;
-    background-color: rgb(51, 51, 51);
+    padding: 1rem;
+    /* background-color: rgb(51, 51, 51); */
     /* box-shadow: rgba(105, 105, 105, 0.2) 0px 0px 15px 10px; */
 }
 
 .header {
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    align-items: center;
     gap: 1em;
     margin: 1em 0;
     padding-bottom: 0.5em;
@@ -28,10 +29,9 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     color: #d2d2d2eb;
-    margin-bottom: 4px;
 }
 
 .date {
@@ -40,6 +40,22 @@
     color: #d2d2d2b2;
 }
 
-.director {
-    font-size: 1em;
+.director{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.director p:nth-of-type(2n) {
+    font-size: 1.5em;
+    color: #d2d2d2eb;
+
+}
+
+.producerList li{
+    list-style: none;
+}
+
+.producerList{
+    padding: 0;
 }

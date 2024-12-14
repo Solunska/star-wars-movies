@@ -10,15 +10,12 @@ export default function Movie({ id, title, director, releaseDate, producers }) {
     return <div className={classes.container}>
         <div className={classes.header}>
             <p className={classes.id}>{movieId}</p>
-            <div>
-                <p className={classes.title}>{title}</p>
-                <p className={classes.date}>{formattedDate}</p>
+            <p className={classes.title}>{title}</p>
+            <p className={classes.date}>{formattedDate}</p>
+            <div className={classes.director}>
+                <p>Directed by</p>
+                <p>{director}</p>
             </div>
-        </div>
-
-        <div>
-            <p>Directed by</p>
-            <p>{director}</p>
         </div>
         <div className={classes.producerSection}>
             <p className={classes.producerTitle}>Producers:</p>
