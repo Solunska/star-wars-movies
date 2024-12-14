@@ -6,6 +6,9 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --sw-yellow-rgb: 255, 233, 31;
+  --sw-yellow-hex: #ffe91f;
+  --sw-yellow-dark-hex: #979155;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
