@@ -10,6 +10,10 @@
   --sw-yellow-hex: #ffe91f;
   --sw-yellow-dark-hex: #979155;
 
+  --text-color: #d2d2d2;
+  --text-color-secondary: #d2d2d29f;
+
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

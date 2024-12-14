@@ -1,11 +1,11 @@
 .container {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3em; */
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
 }
 
 @media (max-width:600px) {
-    .container{
+    .container {
         grid-template-columns: repeat(1, 1fr);
     }
 }
