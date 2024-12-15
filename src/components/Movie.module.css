@@ -29,19 +29,10 @@
     color: var(--text-color-secondary);
 }
 
-.group {
-    display: flex;
-    flex-direction: column;
-}
-
 .director,
 .producer {
     font-size: 1.5em;
     color: var(--text-color);
-}
-
-.label {
-    color: var(--text-color-secondary);
 }
 
 .producerList li {

@@ -1,0 +1,8 @@
+.container{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--sw-yellow-dark-hex);
+    padding: 1em;
+}

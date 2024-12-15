@@ -5,3 +5,9 @@
 .logo {
     width: 16rem;
 }
+
+@media (max-width:900px) {
+    .container {
+        margin-bottom: 0.5em;
+    }
+}

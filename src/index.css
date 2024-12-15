@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-image: url('./assets/background.jpg');
+  
   --sw-yellow-rgb: 255, 233, 31;
   --sw-yellow-hex: #ffe91f;
   --sw-yellow-dark-hex: #979155;
@@ -13,7 +14,8 @@
   --text-color: #d2d2d2;
   --text-color-secondary: #d2d2d29f;
 
-
+  --btn-color: #f5f4f430;
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
