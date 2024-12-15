@@ -6,12 +6,14 @@ import InputGroup from '../UI/InputGroup';
 import { FiltersContext } from '../context/FiltersContext';
 import { LABEL_DATA } from '../translations/global';
 import { LanguageContext } from '../context/LanguageContext';
+import { useFilter } from '../hooks/useFilter';
 
 export default function Filter() {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const { options } = useContext(DropdownOptionsContext);
     const { handleFilterChange, clearFilters, filters } = useContext(FiltersContext);
     const { language } = useContext(LanguageContext);
+    const {handleApplyFilters} = useFilter();
 
     console.log(filters);
 
@@ -56,6 +58,7 @@ export default function Filter() {
                     onChange={handleFilterChange} />
             </div>
             <button className={classes.btn} onClick={() => clearFilters()}>Clear Filters</button>
+            <button className={classes.btn} onClick={handleApplyFilters}>Apply Filters</button>
         </div>}
     </div>
 }

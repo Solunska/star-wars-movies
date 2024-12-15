@@ -1,36 +1,24 @@
 // import { useQuery } from '@apollo/client';
+// import { GET_MOVIES } from '../graphql/movieQuery';
 import Movie from './Movie';
 import classes from './MovieList.module.css';
-// import { GET_MOVIES } from '../graphql/movieQuery';
-import { DropdownOptionsContext } from '../context/DropdownOptionsContext';
-import { useContext, useEffect } from 'react';
+
 import { useFilter } from '../hooks/useFilter';
 import LoadingIndicator from '../UI/LoadingIndicator';
-import ErrorMessage from '../UI/ErrorMessage';
-import { data } from '../data';
+import useInfiniteScroll from '../hooks/useInfiniteScroll';
+import { useMoviesData } from '../hooks/useMoviesData';
 
 export default function MovieList() {
     // const { loading, error, data } = useQuery(GET_MOVIES)
-    const { updateOptions } = useContext(DropdownOptionsContext);
     const { setMoviesData, filteredMovies } = useFilter();
-
-    useEffect(() => {
-        if (data && data.allFilms) {
-            updateOptions(data.allFilms.films);
-        }
-    }, [data]);
-
-    useEffect(() => {
-        if (data?.allFilms?.films?.length > 0) {
-            setMoviesData(data.allFilms.films);
-        }
-    }, [data, setMoviesData]);
+    const { data, isLoading } = useInfiniteScroll(filteredMovies);
+    useMoviesData(setMoviesData);
 
     // if (loading) return <LoadingIndicator />;
     // if (error) return <ErrorMessage />
-
+    console.log(data);
     return <div className={classes.container}>
-        {filteredMovies.map((film) => (
+        {data.map((film) => (
             <Movie
                 key={film.id}
                 id={film.id}
@@ -39,5 +27,7 @@ export default function MovieList() {
                 releaseDate={film.releaseDate}
                 producers={film.producers} />
         ))}
+        {isLoading && <LoadingIndicator />}
+        {(data.length <= 0 && !isLoading) && <h2>No movies found. Try adjusting or clearing the filters to see more results.</h2>}
     </div>
 }
