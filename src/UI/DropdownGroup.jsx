@@ -4,10 +4,10 @@ export default function DropdownGroup({ containerClass, label, name, values, onC
             <p>{label}</p>
             <select
                 name={name}
-                onChange={(e) => onChange(name, e.target.value)}
-                value={value}>
+                value={value}
+                onChange={(e) => onChange(name, e.target.value)}>
                 {values.map((v) => (
-                    <option key={v} value={value}>{v}</option>
+                    <option key={v} value={v}>{v}</option>
                 ))}
             </select>
         </div>

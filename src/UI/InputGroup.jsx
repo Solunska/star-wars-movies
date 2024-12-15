@@ -1,7 +1,8 @@
-export default function InputGroup({ containerClass, label,value, onChange, checked }) {
+export default function InputGroup({ containerClass, label, value, onChange, checked, inputClass }) {
     return <div className={containerClass}>
-        <p>{label}</p>
+        <label htmlFor={`sort-${value}`}>{label}</label>
         <input
+            className={inputClass}
             type="radio"
             name="sort"
             id="sort"

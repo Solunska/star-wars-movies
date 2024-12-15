@@ -50,13 +50,16 @@
     border: none;
     border-radius: 0.5em;
     padding: 0.5em;
-    text-align: center;
+    text-align: left;
     width: 15em;
 }
 
 .inputGroup select option {
     border: none;
+    padding: 0.5em;
+    font-family: inherit;
 }
+
 
 .label {
     color: var(--text-color-secondary);
@@ -68,9 +71,18 @@
     padding: 1em 1.5em;
     border: none;
     border-radius: 0.5em;
-    font-weight: 600;
-    background-color: var(--sw-yellow-dark-hex);
-    color: white;
+    font-weight: 800;
+    background-color: var(--btn-primary);
+    color: black;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.btn:active {
+    background-color: var(--btn-primary-active);
 }
 
 @media (max-width:900px) {

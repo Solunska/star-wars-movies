@@ -11,7 +11,9 @@ export default function Filter() {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const { options } = useContext(DropdownOptionsContext);
     const { handleFilterChange, clearFilters, filters } = useContext(FiltersContext);
-    const {language} = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
+
+    console.log(filters);
 
     return <div className={classes.container}>
         <button className={classes.filterBtn} onClick={() => setIsFilterOpen(!isFilterOpen)}>
@@ -25,7 +27,7 @@ export default function Filter() {
                     label={LABEL_DATA.filter.directorLabel[language]}
                     name="director"
                     onChange={handleFilterChange}
-                    value={filters.director ? filters.director : options.directors[0]}
+                    value={filters.director}
                     values={options.directors}
                 />
                 <DropdownGroup
@@ -33,19 +35,21 @@ export default function Filter() {
                     label={LABEL_DATA.filter.releaseYearLabel[language]}
                     name="year"
                     onChange={handleFilterChange}
-                    value={filters.year ? filters.year : options.years[0]}
+                    value={filters.year}
                     values={options.years} />
             </div>
             <div>
                 <p className={classes.label}>{LABEL_DATA.filter.sortLabel[language]}</p>
                 <InputGroup
                     containerClass={classes.inputGroup}
+                    inputClass={classes.radioBtn}
                     label={LABEL_DATA.filter.titleLabel[language]}
                     value="title"
                     checked={filters.sort === "title"}
                     onChange={handleFilterChange} />
                 <InputGroup
                     containerClass={classes.inputGroup}
+                    inputClass={classes.radioBtn}
                     label={LABEL_DATA.filter.releaseDateLabel[language]}
                     value="releaseDate"
                     checked={filters.sort === "releaseDate"}

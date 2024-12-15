@@ -11,8 +11,6 @@ export default function Movie({ id, title, director, releaseDate, producers }) {
     const date = new Date(releaseDate);
     const formattedDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
 
-    console.log(language);
-
     return <div className={classes.container}>
         <p className={classes.id}>{id}</p>
         <p className={classes.title}>{title}</p>
