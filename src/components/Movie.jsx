@@ -3,7 +3,7 @@ import TextGroup from './TextGroup';
 import { LABEL_DATA } from '../translations/global';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
-import { formatDate } from '../formatDate';
+import { formatDate } from '../utils/formatDate';
 
 export default function Movie({ id, title, director, releaseDate, producers }) {
     const { language } = useContext(LanguageContext);
