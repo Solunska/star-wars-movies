@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useInfiniteScroll(movies) {
-    const [loadedMovies, setLoadedMovies] = useState(2);
+    const [loadedMovies, setLoadedMovies] = useState(3);
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState(movies.slice(0, loadedMovies));
 
@@ -15,7 +15,7 @@ export function useInfiniteScroll(movies) {
 
         if (scrollTop + windowHeight >= documentHeight - 10) {
             setIsLoading(true);
-            setLoadedMovies((prevLoadedMovies) => prevLoadedMovies + 2);
+            setLoadedMovies((prevLoadedMovies) => prevLoadedMovies + 3);
         }
     };
 
