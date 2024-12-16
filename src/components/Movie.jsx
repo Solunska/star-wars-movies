@@ -3,13 +3,13 @@ import TextGroup from './TextGroup';
 import { LABEL_DATA } from '../translations/global';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
+import { formatDate } from '../formatDate';
 
 export default function Movie({ id, title, director, releaseDate, producers }) {
-    const {language} = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
     const movieId = atob(id).split(":")[1];
 
-    const date = new Date(releaseDate);
-    const formattedDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
+    const formattedDate = formatDate(releaseDate);
 
     return <div className={classes.container}>
         <p className={classes.id}>{movieId}</p>

@@ -1,3 +1,12 @@
-export default function LoadingIndicator() {
-    return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+export default function LoadingIndicatorOverlay() {
+    return (
+        <div className="loading-overlay">
+            <div className="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    );
 }

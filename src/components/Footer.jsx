@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import classes from './Footer.module.css';
 import { LanguageContext } from '../context/LanguageContext';
+import classes from './Footer.module.css';
 
 export default function Footer() {
     const { handleSetLanguage } = useContext(LanguageContext);

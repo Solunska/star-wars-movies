@@ -7,6 +7,7 @@ import { useFilter } from '../hooks/useFilter';
 import LoadingIndicator from '../UI/LoadingIndicator';
 import useInfiniteScroll from '../hooks/useInfiniteScroll';
 import { useMoviesData } from '../hooks/useMoviesData';
+import ErrorMessage from '../UI/ErrorMessage';
 
 export default function MovieList() {
     // const { loading, error, data } = useQuery(GET_MOVIES)
@@ -15,8 +16,8 @@ export default function MovieList() {
     useMoviesData(setMoviesData);
 
     // if (loading) return <LoadingIndicator />;
-    // if (error) return <ErrorMessage />
-    console.log(data);
+    // if (error) return <ErrorMessage heading="Oops! Something went wrong." message="There was a problem fetch the data. Please try again later." />
+
     return <div className={classes.container}>
         {data.map((film) => (
             <Movie
@@ -28,6 +29,6 @@ export default function MovieList() {
                 producers={film.producers} />
         ))}
         {isLoading && <LoadingIndicator />}
-        {(data.length <= 0 && !isLoading) && <h2>No movies found. Try adjusting or clearing the filters to see more results.</h2>}
+        {(data.length <= 0 && !isLoading) && <ErrorMessage heading="No movies found." message="Try adjusting or clearing the filters to see more results." />}
     </div>
 }

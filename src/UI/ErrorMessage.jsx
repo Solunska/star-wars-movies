@@ -1,6 +1,6 @@
-export default function ErrorMessage() {
+export default function ErrorMessage({ heading, message }) {
     return <div className="error-container">
-        <h2>Oops! Something went wrong.</h2>
-        <p>There was a problem fetch the data. Please try again later.</p>
+        <h2>{heading}</h2>
+        <p>{message}</p>
     </div>
 }
